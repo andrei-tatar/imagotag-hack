@@ -1,4 +1,3 @@
-#include <cc2510fx.h>
 #include "epd.h"
 #include "../util.h"
 
@@ -19,6 +18,8 @@ void epd_init()
     U0CSR |= BV(6);                                    // enable SPI
 
     P1DIR |= BV(EPD_DC);
+    P1DIR &= ~BV(EPD_BUSY);
+    P2DIR |= BV(EPD_RESET);
 }
 
 uint8_t spi_write(uint8_t data)

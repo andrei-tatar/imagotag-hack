@@ -4,6 +4,8 @@
         "cc2510fx.h": "c",
         "util.h": "c",
         "spi.h": "c",
-        "epd.h": "c"
+        "epd.h": "c",
+        "time.h": "c",
+        "compiler.h": "c"
     }
 }
