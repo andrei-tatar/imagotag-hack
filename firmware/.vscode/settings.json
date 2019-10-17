@@ -3,6 +3,7 @@
         "stdint.h": "c",
         "cc2510fx.h": "c",
         "util.h": "c",
-        "spi.h": "c"
+        "spi.h": "c",
+        "epd.h": "c"
     }
 }
