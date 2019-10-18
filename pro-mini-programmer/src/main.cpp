@@ -139,7 +139,7 @@ void setup()
   led = 1;
 
   // Initilize the UART for serial terminal display @9600 baud
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   cc_init();
 

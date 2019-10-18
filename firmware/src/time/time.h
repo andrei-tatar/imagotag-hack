@@ -5,6 +5,6 @@
 
 void time_init();
 uint32_t time();
-void sleep(uint16_t millis);
+void delay(uint16_t millis);
 
 #endif

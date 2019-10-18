@@ -22,7 +22,7 @@ volatile uint32_t time()
     return value;
 }
 
-void sleep(uint16_t millis)
+void delay(uint16_t millis)
 {
     uint32_t start = time();
     while (time() - start < millis)

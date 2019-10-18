@@ -5,15 +5,22 @@
 
 void main(void)
 {
-  time_init();
-  epd_init();
   HAL_ENABLE_INTERRUPTS();
-
+  time_init();
   LED_INIT;
+
+  for (uint8_t i = 0; i < 10; i++)
+  {
+    LED_TOGGLE;
+    delay(50);
+  }
+
+  epd_init();
+
   LED_BOOST_ON;
   while (1)
   {
-    sleep(500);
+    delay(500);
     LED_TOGGLE;
   }
 }
