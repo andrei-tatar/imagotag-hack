@@ -19,11 +19,11 @@
 #define RESET_ON EPD_RESET = 0
 #define RESET_OFF EPD_RESET = 1
 
-#define HRES 104
-#define VRES 212
+// #define HRES 104
+// #define VRES 212
 
-// #define HRES 152
-// #define VRES 296
+#define HRES 152
+#define VRES 296
 #define BUFFER_SIZE (HRES / 8 * VRES)
 
 static void inline sendCommand(uint8_t cmd);
