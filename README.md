@@ -2,4 +2,4 @@
 
 ## Chips used
 
-- CC2510 - MCU + WiFi - 8051
+- [CC2510 - MCU + WiFi - 8051](../../raw/master/doc/cc2510.pdf)
