@@ -15,16 +15,16 @@
 ### Port 0
 - P0:0 - EPD power enable (active low via a P channel fet)
 - P0:1 - EPD CS (SPI interface chip select)
-- P0:2 - **tbd...**
+- P0:2 - debug port
 - P0:3 - EPD SDI (SPI interface serial data in)
 - P0:4 - SDA to NFC chip
 - P0:5 - EPD CLK (SPI interface clock)
 - P0:6 - SCL to NFC chip
-- P0:7 - **tbd...**
+- P0:7 - *not connected*
 
 ### Port 1
 - P1:0 - NFC VCC (seems to power NFC chip and **mysterious chip - pins 3,7,8**)
-- P1:1 - **tbd...**
+- P1:1 - NFC FD (field detection)
 - P1:2 - EPD DC (data/command select for display)
 - P1:3 - EPD BUSY (detect if display busy)
 - P1:4 - **mysterious chip pin 1**
