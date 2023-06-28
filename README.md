@@ -8,7 +8,7 @@
 - or [GDEW0213Z16 - 2.13" EPD display](../../raw/master/doc/GDEW026Z39.pdf)
 - both displays use [IL0373](../../raw/master/doc/IL0373.pdf) driver
 - [TPS61071 - boost converter](../../raw/master/doc/tps61071.pdf) - used (only?) for white LED 
-- mysterious 8 pin QFN chip (maybe some security chip?)
+- [W25X10CL - Winbond 1Mbits NOR SPI flash](../../raw/master/doc/w25x10cl.pdf)
 
 ## CC2510 connections
 
@@ -23,14 +23,14 @@
 - P0:7 - *not connected*
 
 ### Port 1
-- P1:0 - NFC VCC (seems to power NFC chip and **mysterious chip - pins 3,7,8**)
+- P1:0 - NFC VCC (seems to power NFC chip and SPI flash)
 - P1:1 - NFC FD (field detection)
 - P1:2 - EPD DC (data/command select for display)
 - P1:3 - EPD BUSY (detect if display busy)
-- P1:4 - **mysterious chip pin 1**
-- P1:5 - **mysterious chip pin 6**
-- P1:6 - **mysterious chip pin 5**
-- P1:7 - **mysterious chip pin 3**
+- P1:4 - SPI flash CS 
+- P1:5 - SPI flash CLK
+- P1:6 - SPI flahs MOSI
+- P1:7 - SPI flahs MISO
 
 ### Port 2
 - P2:0 - EPD Reset (display reset)
