@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "sdcc",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/usr/share/sdcc/include/mcs51/**"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/sdcc"
+    }
+  ],
+  "version": 4
+}

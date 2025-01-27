@@ -1,14 +1,23 @@
 #ifndef _UTIL_H_
 #define _UTIL_H_
 
+#ifndef BUILD
+
+#include <stdbool.h>
+
+#undef SDCC
+#undef __SDCC
+#define INTERRUPT(name, vector) void name(void)
+
+#endif
+
 #include <cc2510fx.h>
 
 #define BV(x) (1 << (x))
 #define st(x) \
-    do        \
-    {         \
-        x     \
-    } while (__LINE__ == -1)
+  do {        \
+    x         \
+  } while (__LINE__ == -1)
 
 #define HAL_ENABLE_INTERRUPTS() st(EA = 1;)
 #define HAL_DISABLE_INTERRUPTS() st(EA = 0;)
@@ -19,15 +28,6 @@ typedef unsigned char halIntState_t;
 #define HAL_EXIT_CRITICAL_SECTION(x) st(EA = x;)
 #define HAL_CRITICAL_STATEMENT(x) st(halIntState_t _s; HAL_ENTER_CRITICAL_SECTION(_s); x; HAL_EXIT_CRITICAL_SECTION(_s);)
 
-#define LED_BOOST_ON P2_2 = 1
-#define LED_BOOST_OFF P2_2 = 0
-#define LED_ON P2_1 = 1
-#define LED_OFF P2_1 = 0
-#define LED_TOGGLE P2_1 ^= 1
-#define LED_INIT                \
-    {                           \
-        P2DIR |= BV(1) | BV(2); \
-        LED_OFF;                \
-    }
+#define CLOCKSOURCE_XOSC_STABLE() (SLEEP & 0x40)
 
 #endif

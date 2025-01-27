@@ -1,5 +1,12 @@
 build/*
 !build/main.hex
 
-.vscode/c_cpp_properties.json
 .vscode/launch.json
+*.lst
+*.rel
+*.sym
+*.asm
+*.lk
+*.map
+*.mem
+*.rst

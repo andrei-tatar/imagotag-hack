@@ -6,6 +6,10 @@
         "spi.h": "c",
         "epd.h": "c",
         "time.h": "c",
-        "compiler.h": "c"
+        "compiler.h": "c",
+        "isr.h": "c",
+        "uart.h": "c",
+        "hal.h": "c",
+        "stdbool.h": "c"
     }
 }
