@@ -3,8 +3,17 @@
   "tasks": [
     {
       "type": "shell",
+      "label": "clean",
+      "command": "make clean"
+    },
+    {
+      "type": "shell",
       "label": "build",
-      "command": "make"
+      "command": "make",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "type": "shell",

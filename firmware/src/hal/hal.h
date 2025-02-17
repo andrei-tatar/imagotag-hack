@@ -1,13 +1,14 @@
 #ifndef _UTIL_H_
 #define _UTIL_H_
 
-#ifndef BUILD
-
 #include <stdbool.h>
+
+#ifndef BUILD
 
 #undef SDCC
 #undef __SDCC
 #define INTERRUPT(name, vector) void name(void)
+#define __xdata
 
 #endif
 

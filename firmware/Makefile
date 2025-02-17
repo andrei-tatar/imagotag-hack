@@ -1,5 +1,9 @@
 FLASH_SIZE = 0x7FFF # 32KB flash
-RAM_SIZE = 0xF00 # slow RAM
+
+XRAM_START = 0xF000
+XRAM_SIZE = 0xF00 # slow RAM
+
+IRAM_SIZE = 0x100 # fast RAM
 
 SHELL = sh -xv
 SRC = $(shell find . -type f -name "*.c")
@@ -14,8 +18,8 @@ SDCC_FLAGS = --model-small --opt-code-speed
 LDFLAGS_FLASH = \
 --out-fmt-ihx \
 --code-loc 0x000 --code-size $(FLASH_SIZE) \
---xram-loc 0xf000 --xram-size $(RAM_SIZE) \
---iram-size 0x100
+--xram-loc $(XRAM_START) --xram-size $(XRAM_SIZE) \
+--iram-size $(IRAM_SIZE)
 
 TARGET = firmware
 

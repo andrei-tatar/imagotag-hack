@@ -10,6 +10,7 @@
         "isr.h": "c",
         "uart.h": "c",
         "hal.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "string.h": "c"
     }
 }
