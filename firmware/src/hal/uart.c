@@ -93,19 +93,18 @@ void uart_send_str(const char *str) {
 }
 
 uint8_t uart_available() {
-  uint8_t available;
+  uint8_t head, tail;
   HAL_CRITICAL_STATEMENT({
-    if (rx_buffer_head >= rx_buffer_tail) {
-      available = rx_buffer_head - rx_buffer_tail;
-    } else {
-      available = UART_RX_BUFFER_SIZE - rx_buffer_tail + rx_buffer_head;
-    }
+    head = rx_buffer_head;
+    tail = rx_buffer_tail;
   });
-
-  return available;
+  if (head >= tail) {
+    return head - tail;
+  }
+  return UART_RX_BUFFER_SIZE - tail + head;
 }
 
-bool uart_read(uint8_t *data) {
+bool uart_read_byte(uint8_t *data) {
   bool isBufferEmpty;
   HAL_CRITICAL_STATEMENT({
     isBufferEmpty = rx_buffer_head == rx_buffer_tail && !rx_buffer_full;
@@ -115,9 +114,7 @@ bool uart_read(uint8_t *data) {
   }
 
   *data = rx_buffer[rx_buffer_tail];
-  HAL_CRITICAL_STATEMENT({
-    rx_buffer_tail = (rx_buffer_tail + 1) % UART_RX_BUFFER_SIZE;
-    rx_buffer_full = false;
-  });
+  rx_buffer_tail = (rx_buffer_tail + 1) % UART_RX_BUFFER_SIZE;
+  rx_buffer_full = false;
   return true;
 }

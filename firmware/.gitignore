@@ -1,12 +1,8 @@
-build/*
-!build/main.hex
-
 .vscode/launch.json
 *.lst
 *.rel
 *.sym
 *.asm
-*.lk
-*.map
-*.mem
 *.rst
+firmware.*
+!firmware.hex

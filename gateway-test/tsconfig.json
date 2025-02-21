@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "ES2022",
+        "module": "CommonJS",
+        "strict": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        // "noUnusedLocals": true,
+        "jsx": "react",
+        "outDir": "lib",
+    },
+}

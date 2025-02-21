@@ -12,6 +12,6 @@ void uart_send(const uint8_t *data, size_t len);
 void uart_send_str(const char *str);
 
 uint8_t uart_available();
-bool uart_read(uint8_t *data);
+bool uart_read_byte(uint8_t *data);
 
 #endif

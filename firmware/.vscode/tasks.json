@@ -19,7 +19,7 @@
       "type": "shell",
       "label": "flash",
       "dependsOn": ["build"],
-      "command": "cd ../programmer && node -r ts-node/register src/index.ts ../firmware/firmware.hex /dev/ttyUSB0",
+      "command": "cd ../programmer && node -r ts-node/register src/index.ts ../firmware/firmware.hex /dev/ttyUSB1",
       "group": {
         "kind": "build",
         "isDefault": true
